@@ -81,7 +81,9 @@ class APIUtils:
 
     # 创建一条数据
     def create_data(self, data):
-        result = self.send_request('POST', self.url_create_data, data)
+        result = self.send_request('POST', self.url_create_data, {
+            'data': data
+        })
         return result['data']
 
     # 更新数据
